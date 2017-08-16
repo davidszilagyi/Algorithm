@@ -90,4 +90,16 @@ public class Basic {
         }
         return result;
     }
+
+    public String truncateString(String str, int num) {
+        String result;
+        if(num >= str.length()) {
+            return str;
+        } else if(num <= 3) {
+            result = str.substring(0, num) + "...";
+        } else {
+            result = str.substring(0, num - 3) + "...";
+        }
+        return result;
+    }
 }

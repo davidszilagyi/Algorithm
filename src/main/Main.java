@@ -60,6 +60,14 @@ public class Main {
         System.out.println(basic.repeatStringNumTimes("abc", 1));
         System.out.println(basic.repeatStringNumTimes("*", 8));
         System.out.println(basic.repeatStringNumTimes("abc", -2));
+        System.out.println("--------------------- Truncate a string ----------------------");
+        String test = "A-tisket a-tasket A green and yellow basket";
+        System.out.println(basic.truncateString(test, 11));
+        System.out.println(basic.truncateString("Peter Piper picked a peck of pickled peppers", 14));
+        System.out.println(basic.truncateString(test, test.length()));
+        System.out.println(basic.truncateString(test, test.length() + 2));
+        System.out.println(basic.truncateString("A-", 1));
+        System.out.println(basic.truncateString("Absolutely Longer", 2));
     }
 
     private static int[][] generate4Array(int[] numbers) {
