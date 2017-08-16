@@ -30,5 +30,11 @@ public class Main {
         System.out.println(basic.palindrome("1 eye for of 1 eye"));
         System.out.println(basic.palindrome("0_0 (: /-\\ :) 0-0"));
         System.out.println(basic.palindrome("five|\\_/|four"));
+        System.out.println("------------------ Find the Longest Word in a String ------------------");
+        System.out.println(basic.findLongestWord("The quick brown fox jumped over the lazy dog"));
+        System.out.println(basic.findLongestWord("May the force be with you"));
+        System.out.println(basic.findLongestWord("Google do a barrel roll"));
+        System.out.println(basic.findLongestWord("What is the average airspeed velocity of an unladen swallow"));
+        System.out.println(basic.findLongestWord("What if we try a super-long word such as otorhinolaryngology"));
     }
 }

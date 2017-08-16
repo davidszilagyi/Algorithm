@@ -33,4 +33,15 @@ public class Basic {
         }
         return false;
     }
+
+    public int findLongestWord(String text) {
+        String[] words = text.split(" ");
+        int longest = 0;
+        for(int i = 0; i < words.length; i++) {
+            if(longest < words[i].length()) {
+                longest = words[i].length();
+            }
+        }
+        return longest;
+    }
 }
