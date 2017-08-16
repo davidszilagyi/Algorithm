@@ -1,6 +1,8 @@
 package challenges;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by David Szilagyi on 2017. 08. 16..
@@ -100,37 +102,70 @@ public class Basic {
     }
 
     public Object[][] chunkArrayInGroups(Object[] array, int size) {
-        int arraySize = (int) Math.ceil(array.length / size);
-        int rest = array.length % size;
-        int negativeRest = 0;
-        if (rest > arraySize) {
-            negativeRest = -1;
+        int arraySize = array.length;
+        int rest = arraySize % size;
+        int counter = 0;
+        List<Object[]> table = new LinkedList<>();
+        Object[] temp = new Object[size];
+        for (int i = 0; i < arraySize - rest; i++) {
+            if (counter == size) {
+                counter = 0;
+                table.add(temp);
+                temp = new Object[size];
+            }
+            temp[counter] = array[i];
+            counter++;
         }
-        Object[][] table = new Object[arraySize + rest + negativeRest][size];
-        Object[] restTable = new Object[rest];
+        table.add(temp);
+        Object[] restTemp = new Object[rest];
+        int index = 0;
+        for (int k = arraySize - rest; k < arraySize; k++) {
+            restTemp[index] = array[k];
+            index++;
+        }
+        int tableSize = table.size();
+        Object[][] result = new Object[tableSize][size];
+        if(rest != 0) {
+            result = new Object[tableSize + 1][size];
+            result[tableSize] = restTemp;
+        }
         int row = 0;
-        int column = 0;
-        int object = 0;
-        for (int k = 0; k < array.length - rest; k++) {
-            table[column][row] = array[object];
-            object++;
+        for (Object[] item : table) {
+            result[row] = item;
             row++;
-            if (row == size) {
-                row = 0;
-                column++;
-            }
         }
-
-        if (rest != 0) {
-            int item = 0;
-            for (int y = array.length - rest; y < array.length; y++) {
-                restTable[item] = array[y];
-                item++;
-            }
-            table[table.length - 1] = restTable;
-        }
-
-        return table;
+        return result;
+//        int arraySize = (int) Math.ceil(array.length / size);
+//        int rest = array.length % size;
+//        int negativeRest = 0;
+//        if (rest > arraySize) {
+//            negativeRest = -1;
+//        }
+//        Object[][] table = new Object[arraySize + rest + negativeRest][size];
+//        Object[] restTable = new Object[rest];
+//        int row = 0;
+//        int column = 0;
+//        int object = 0;
+//        for (int k = 0; k < array.length - rest; k++) {
+//            table[column][row] = array[object];
+//            object++;
+//            row++;
+//            if (row == size) {
+//                row = 0;
+//                column++;
+//            }
+//        }
+//
+//        if (rest != 0) {
+//            int item = 0;
+//            for (int y = array.length - rest; y < array.length; y++) {
+//                restTable[item] = array[y];
+//                item++;
+//            }
+//            table[table.length - 1] = restTable;
+//        }
+//
+//        return table;
     }
 
     public Object[] slasher(Object[] array, int n) {
