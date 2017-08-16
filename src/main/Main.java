@@ -94,6 +94,15 @@ public class Main {
         System.out.println(basic.destroyer(new Object[]{3, 5, 1, 2, 2}, 2, 3, 5));
         System.out.println(basic.destroyer(new Object[]{2, 3, 2, 3}, 2, 3));
         System.out.println(basic.destroyer(new Object[]{"tree", "hamburger", 53}, "tree", 53));
+        System.out.println("--------------------- Where do I belong ----------------------");
+        System.out.println(basic.getIndexToIns(new int[]{10, 20, 30, 40, 50}, 35));
+        System.out.println(basic.getIndexToIns(new int[]{10, 20, 30, 40, 50}, 30));
+        System.out.println(basic.getIndexToIns(new int[]{40, 60}, 50));
+        System.out.println(basic.getIndexToIns(new int[]{3, 10, 5}, 3));
+        System.out.println(basic.getIndexToIns(new int[]{5, 3, 20, 3}, 5));
+        System.out.println(basic.getIndexToIns(new int[]{2, 20, 10}, 19));
+        System.out.println(basic.getIndexToIns(new int[]{2, 5,10}, 15));
+
     }
 
     private static int[][] generate4Array(int[] numbers) {

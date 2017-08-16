@@ -161,4 +161,17 @@ public class Basic {
         }
         return Arrays.toString(result.split(","));
     }
+
+    public int getIndexToIns(int[] numbers, int insert) {
+        Arrays.sort(numbers);
+        int index = 0;
+        for(int i = 0; i < numbers.length; i++) {
+            if(numbers[i] >= insert) {
+                return index;
+            } else {
+                index++;
+            }
+        }
+        return index;
+    }
 }
