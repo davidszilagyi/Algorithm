@@ -53,4 +53,25 @@ public class Basic {
         }
         return result;
     }
+
+    public String largestOfFour(int[][] array) {
+        long[] result = new long[array[0].length];
+        for(int i = 0; i < array.length; i++) {
+            long largest = 0;
+            for(int k = 0; k < array[i].length; k++) {
+                if(largest < array[i][k]) {
+                    largest = array[i][k];
+                }
+            }
+            result[i] = largest;
+        }
+        String resultText = "[";
+        for(int i = 0; i < result.length; i++) {
+            resultText += result[i];
+            if(i != 3) {
+                resultText += ",";
+            }
+        }
+        return resultText += "]";
+    }
 }

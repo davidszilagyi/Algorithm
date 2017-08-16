@@ -40,5 +40,20 @@ public class Main {
         System.out.println(basic.titleCase("I'm a little tea pot"));
         System.out.println(basic.titleCase("sHoRt AnD sToUt"));
         System.out.println(basic.titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
+        System.out.println("------------- Return Largest Numbers in Arrays --------------");
+        System.out.println(basic.largestOfFour(generate4Array(new int[]{4, 5, 1, 3, 13, 27, 18, 26, 32, 35, 37, 39, 1000, 1001, 857, 1})));
+        System.out.println(basic.largestOfFour(generate4Array(new int[]{4, 9, 1, 3, 13, 35, 18, 26, 32, 35, 97, 39, 1000000, 1001, 857, 1})));
+    }
+
+    private static int[][] generate4Array(int[] numbers) {
+        int[][] generated = new int[4][4];
+        int number = 0;
+        for (int i = 0; i < 4; i++) {
+            for (int k = 0; k < 4; k++) {
+                generated[i][k] = numbers[number];
+                number++;
+            }
+        }
+        return generated;
     }
 }
