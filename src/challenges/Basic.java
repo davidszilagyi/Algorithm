@@ -25,4 +25,12 @@ public class Basic {
         }
         return result;
     }
+
+    public boolean palindrome(String text) {
+        String fixedText = text.toLowerCase().replaceAll("[^a-zA-Z0-9']+", "");
+        if(fixedText.equalsIgnoreCase(reverseString(fixedText))) {
+            return true;
+        }
+        return false;
+    }
 }
