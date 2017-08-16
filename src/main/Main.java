@@ -88,6 +88,12 @@ public class Main {
         System.out.println(basic.bouncer(new Object[]{"a", "b", "c"}));
         System.out.println(basic.bouncer(new Object[]{false, null, 0, "NaN", "undefined", ""}));
         System.out.println(basic.bouncer(new Object[]{1, null, "NaN", 2, "undefined"}));
+        System.out.println("---------------------- Seek and Destroy -----------------------");
+        System.out.println(basic.destroyer(new Object[]{1, 2, 3, 1, 2, 3}, 2, 3));
+        System.out.println(basic.destroyer(new Object[]{1, 2, 3, 5, 1, 2, 3}, 2, 3));
+        System.out.println(basic.destroyer(new Object[]{3, 5, 1, 2, 2}, 2, 3, 5));
+        System.out.println(basic.destroyer(new Object[]{2, 3, 2, 3}, 2, 3));
+        System.out.println(basic.destroyer(new Object[]{"tree", "hamburger", 53}, "tree", 53));
     }
 
     private static int[][] generate4Array(int[] numbers) {

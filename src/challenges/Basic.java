@@ -151,4 +151,14 @@ public class Basic {
         }
         return Arrays.toString(result.split(","));
     }
+
+    public String destroyer(Object[] array, Object... destroy) {
+        String result = "";
+        for(int i = 0; i < array.length; i++) {
+            if(!Arrays.asList(destroy).contains(array[i])) {
+                result += array[i] + ",";
+            }
+        }
+        return Arrays.toString(result.split(","));
+    }
 }
