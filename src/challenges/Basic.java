@@ -74,4 +74,20 @@ public class Basic {
         }
         return resultText += "]";
     }
+
+    public boolean confirmEnding(String str, String target) {
+        if(reverseString(reverseString(str).toLowerCase()
+                .substring(0, target.length())).equalsIgnoreCase(target)) {
+            return true;
+        }
+        return false;
+    }
+
+    public String repeatStringNumTimes(String str, int num) {
+        String result = "";
+        for(int i = 0; i < num; i++) {
+            result += str;
+        }
+        return result;
+    }
 }

@@ -43,6 +43,23 @@ public class Main {
         System.out.println("------------- Return Largest Numbers in Arrays --------------");
         System.out.println(basic.largestOfFour(generate4Array(new int[]{4, 5, 1, 3, 13, 27, 18, 26, 32, 35, 37, 39, 1000, 1001, 857, 1})));
         System.out.println(basic.largestOfFour(generate4Array(new int[]{4, 9, 1, 3, 13, 35, 18, 26, 32, 35, 97, 39, 1000000, 1001, 857, 1})));
+        System.out.println("-------------------- Confirm the Ending ---------------------");
+        System.out.println(basic.confirmEnding("Bastian", "n"));
+        System.out.println(basic.confirmEnding("Connor", "n"));
+        System.out.println(basic.confirmEnding("Walking on water and developing software from a specification " +
+                "are easy if both are frozen", "specification"));
+        System.out.println(basic.confirmEnding("He has to give me a new name", "name"));
+        System.out.println(basic.confirmEnding("Open sesame", "same"));
+        System.out.println(basic.confirmEnding("Open sesame", "pen"));
+        System.out.println(basic.confirmEnding("If you want to save our world, you must hurry. We dont know " +
+                "how much longer we can withstand the nothing", "mountain"));
+        System.out.println("-------------- Repeat a string repeat a string ---------------");
+        System.out.println(basic.repeatStringNumTimes("*", 3));
+        System.out.println(basic.repeatStringNumTimes("abc", 3));
+        System.out.println(basic.repeatStringNumTimes("abc", 4));
+        System.out.println(basic.repeatStringNumTimes("abc", 1));
+        System.out.println(basic.repeatStringNumTimes("*", 8));
+        System.out.println(basic.repeatStringNumTimes("abc", -2));
     }
 
     private static int[][] generate4Array(int[] numbers) {
