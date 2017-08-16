@@ -68,6 +68,14 @@ public class Main {
         System.out.println(basic.truncateString(test, test.length() + 2));
         System.out.println(basic.truncateString("A-", 1));
         System.out.println(basic.truncateString("Absolutely Longer", 2));
+        System.out.println("---------------------- Chuncky Monkey -----------------------");
+        System.out.println(basic.chunkArrayInGroups(new Object[]{"a", "b", "c", "d"}, 2));
+        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5}, 3));
+        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5}, 2));
+        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5}, 4));
+        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6}, 3));
+        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 4));
+        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 2));
     }
 
     private static int[][] generate4Array(int[] numbers) {
