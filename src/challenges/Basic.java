@@ -1,5 +1,7 @@
 package challenges;
 
+import java.util.Arrays;
+
 /**
  * Created by David Szilagyi on 2017. 08. 16..
  */
@@ -65,14 +67,8 @@ public class Basic {
             }
             result[i] = largest;
         }
-        String resultText = "[";
-        for (int i = 0; i < result.length; i++) {
-            resultText += result[i];
-            if (i != 3) {
-                resultText += ",";
-            }
-        }
-        return resultText += "]";
+
+        return Arrays.toString(result);
     }
 
     public boolean confirmEnding(String str, String target) {
@@ -124,6 +120,7 @@ public class Basic {
                 column++;
             }
         }
+
         if(rest != 0) {
             int item = 0;
             for (int y = array.length - rest; y < array.length; y++) {
@@ -133,32 +130,25 @@ public class Basic {
             table[table.length - 1] = restTable;
         }
 
-        String result = "[";
-        for (int n = 0; n < table.length; n++) {
-            result += "[";
-            for (int i = 0; i < table[n].length; i++) {
-                result += table[n][i];
-                if (i != table[n].length - 1) {
-                    result += ",";
-                }
-            }
-            result += "]";
-            if (n != table.length - 1) {
-                result += ",";
-            }
-        }
-        result += "]";
-        return result;
+        return Arrays.deepToString(table);
     }
 
     public String slasher(Object[] array, int n) {
-        String result = "[";
+        String result = "";
         for(int i = n; i < array.length; i++) {
-            result += array[i];
-            if(i < array.length - 1) {
-                result += ",";
+            result += array[i] + ",";
+        }
+        return Arrays.toString(result.split(","));
+    }
+
+    public String bouncer(Object[] array) {
+        Object[] falsy = new Object[]{false, null, 0, "", "undefined", "NaN"};
+        String result = "";
+        for(int i = 0; i < array.length; i++) {
+            if (!Arrays.asList(falsy).contains(array[i])) {
+                result += array[i] + ",";
             }
         }
-        return result += "]";
+        return Arrays.toString(result.split(","));
     }
 }
