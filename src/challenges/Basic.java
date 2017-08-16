@@ -1,6 +1,7 @@
 package challenges;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by David Szilagyi on 2017. 08. 16..
@@ -103,7 +104,7 @@ public class Basic {
         int arraySize = (int) Math.ceil(array.length / size);
         int rest = array.length % size;
         int negativeRest = 0;
-        if(rest > arraySize) {
+        if (rest > arraySize) {
             negativeRest = -1;
         }
         Object[][] table = new Object[arraySize + rest + negativeRest][size];
@@ -121,7 +122,7 @@ public class Basic {
             }
         }
 
-        if(rest != 0) {
+        if (rest != 0) {
             int item = 0;
             for (int y = array.length - rest; y < array.length; y++) {
                 restTable[item] = array[y];
@@ -135,7 +136,7 @@ public class Basic {
 
     public String slasher(Object[] array, int n) {
         String result = "";
-        for(int i = n; i < array.length; i++) {
+        for (int i = n; i < array.length; i++) {
             result += array[i] + ",";
         }
         return Arrays.toString(result.split(","));
@@ -144,7 +145,7 @@ public class Basic {
     public String bouncer(Object[] array) {
         Object[] falsy = new Object[]{false, null, 0, "", "undefined", "NaN"};
         String result = "";
-        for(int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (!Arrays.asList(falsy).contains(array[i])) {
                 result += array[i] + ",";
             }
@@ -154,8 +155,8 @@ public class Basic {
 
     public String destroyer(Object[] array, Object... destroy) {
         String result = "";
-        for(int i = 0; i < array.length; i++) {
-            if(!Arrays.asList(destroy).contains(array[i])) {
+        for (int i = 0; i < array.length; i++) {
+            if (!Arrays.asList(destroy).contains(array[i])) {
                 result += array[i] + ",";
             }
         }
@@ -165,13 +166,35 @@ public class Basic {
     public int getIndexToIns(int[] numbers, int insert) {
         Arrays.sort(numbers);
         int index = 0;
-        for(int i = 0; i < numbers.length; i++) {
-            if(numbers[i] >= insert) {
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] >= insert) {
                 return index;
             } else {
                 index++;
             }
         }
         return index;
+    }
+
+    public String rot13(String str) {
+        String result = "";
+        char[] alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+        char[] code = str.toUpperCase().toCharArray();
+        for (char character : code) {
+            for (int i = 0; i < alphabets.length; i++) {
+                if (character == alphabets[i]) {
+                    if (i >= 13) {
+                        result += alphabets[i - 13];
+                        break;
+                    } else if (i < 13) {
+                        result += alphabets[i + 13];
+                        break;
+                    }
+                } else if (i == alphabets.length - 1) {
+                    result += character;
+                }
+            }
+        }
+        return result;
     }
 }

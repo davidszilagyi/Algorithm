@@ -102,6 +102,11 @@ public class Main {
         System.out.println(basic.getIndexToIns(new int[]{5, 3, 20, 3}, 5));
         System.out.println(basic.getIndexToIns(new int[]{2, 20, 10}, 19));
         System.out.println(basic.getIndexToIns(new int[]{2, 5,10}, 15));
+        System.out.println("----------------------- Caesars Cipher ------------------------");
+        System.out.println(basic.rot13("SERR PBQR PNZC"));
+        System.out.println(basic.rot13("SERR CVMMN!"));
+        System.out.println(basic.rot13("SERR YBIR?"));
+        System.out.println(basic.rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK."));
 
     }
 
