@@ -150,4 +150,15 @@ public class Basic {
         result += "]";
         return result;
     }
+
+    public String slasher(Object[] array, int n) {
+        String result = "[";
+        for(int i = n; i < array.length; i++) {
+            result += array[i];
+            if(i < array.length - 1) {
+                result += ",";
+            }
+        }
+        return result += "]";
+    }
 }

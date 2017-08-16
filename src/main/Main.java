@@ -76,6 +76,13 @@ public class Main {
         System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6}, 3));
         System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 4));
         System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 2));
+        System.out.println("----------------------- Slasher Flick ------------------------");
+        System.out.println(basic.slasher(new Object[]{1, 2, 3}, 2));
+        System.out.println(basic.slasher(new Object[]{1, 2, 3}, 0));
+        System.out.println(basic.slasher(new Object[]{1, 2, 3}, 9));
+        System.out.println(basic.slasher(new Object[]{1, 2, 3}, 4));
+        System.out.println(basic.slasher(new Object[]{"burgers", "fries", "shake"}, 1));
+        System.out.println(basic.slasher(new Object[]{1, 2, "chicken", 3, "potatoes", "cheese", 4}, 5));
     }
 
     private static int[][] generate4Array(int[] numbers) {
