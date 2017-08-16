@@ -1,7 +1,6 @@
 package challenges;
 
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by David Szilagyi on 2017. 08. 16..
@@ -57,7 +56,7 @@ public class Basic {
         return result;
     }
 
-    public String largestOfFour(int[][] array) {
+    public long[] largestOfFour(int[][] array) {
         long[] result = new long[array[0].length];
         for (int i = 0; i < array.length; i++) {
             long largest = 0;
@@ -69,7 +68,7 @@ public class Basic {
             result[i] = largest;
         }
 
-        return Arrays.toString(result);
+        return result;
     }
 
     public boolean confirmEnding(String str, String target) {
@@ -100,7 +99,7 @@ public class Basic {
         return result;
     }
 
-    public String chunkArrayInGroups(Object[] array, int size) {
+    public Object[][] chunkArrayInGroups(Object[] array, int size) {
         int arraySize = (int) Math.ceil(array.length / size);
         int rest = array.length % size;
         int negativeRest = 0;
@@ -131,18 +130,18 @@ public class Basic {
             table[table.length - 1] = restTable;
         }
 
-        return Arrays.deepToString(table);
+        return table;
     }
 
-    public String slasher(Object[] array, int n) {
+    public Object[] slasher(Object[] array, int n) {
         String result = "";
         for (int i = n; i < array.length; i++) {
             result += array[i] + ",";
         }
-        return Arrays.toString(result.split(","));
+        return result.split(",");
     }
 
-    public String bouncer(Object[] array) {
+    public Object[] bouncer(Object[] array) {
         Object[] falsy = new Object[]{false, null, 0, "", "undefined", "NaN"};
         String result = "";
         for (int i = 0; i < array.length; i++) {
@@ -150,17 +149,17 @@ public class Basic {
                 result += array[i] + ",";
             }
         }
-        return Arrays.toString(result.split(","));
+        return result.split(",");
     }
 
-    public String destroyer(Object[] array, Object... destroy) {
+    public Object[] destroyer(Object[] array, Object... destroy) {
         String result = "";
         for (int i = 0; i < array.length; i++) {
             if (!Arrays.asList(destroy).contains(array[i])) {
                 result += array[i] + ",";
             }
         }
-        return Arrays.toString(result.split(","));
+        return result.split(",");
     }
 
     public int getIndexToIns(int[] numbers, int insert) {

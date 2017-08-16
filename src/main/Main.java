@@ -2,6 +2,8 @@ package main;
 
 import challenges.Basic;
 
+import java.util.Arrays;
+
 /**
  * Created by David Szilagyi on 2017. 08. 16..
  */
@@ -41,8 +43,11 @@ public class Main {
         System.out.println(basic.titleCase("sHoRt AnD sToUt"));
         System.out.println(basic.titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
         System.out.println("-------------- Return Largest Numbers in Arrays ---------------");
-        System.out.println(basic.largestOfFour(generate4Array(new int[]{4, 5, 1, 3, 13, 27, 18, 26, 32, 35, 37, 39, 1000, 1001, 857, 1})));
-        System.out.println(basic.largestOfFour(generate4Array(new int[]{4, 9, 1, 3, 13, 35, 18, 26, 32, 35, 97, 39, 1000000, 1001, 857, 1})));
+        System.out.println(Arrays.toString(
+                basic.largestOfFour(generate4Array(new int[]{4, 5, 1, 3, 13, 27, 18, 26, 32, 35, 37, 39,
+                        1000, 1001, 857, 1}))));
+        System.out.println(Arrays.toString(basic.largestOfFour(generate4Array(new int[]{4, 9, 1, 3, 13,
+                35, 18, 26, 32, 35, 97, 39, 1000000, 1001, 857, 1}))));
         System.out.println("--------------------- Confirm the Ending ----------------------");
         System.out.println(basic.confirmEnding("Bastian", "n"));
         System.out.println(basic.confirmEnding("Connor", "n"));
@@ -69,31 +74,31 @@ public class Main {
         System.out.println(basic.truncateString("A-", 1));
         System.out.println(basic.truncateString("Absolutely Longer", 2));
         System.out.println("----------------------- Chuncky Monkey ------------------------");
-        System.out.println(basic.chunkArrayInGroups(new Object[]{"a", "b", "c", "d"}, 2));
-        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5}, 3));
-        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5}, 2));
-        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5}, 4));
-        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6}, 3));
-        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 4));
-        System.out.println(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 2));
+        System.out.println(Arrays.deepToString(basic.chunkArrayInGroups(new Object[]{"a", "b", "c", "d"}, 2)));
+        System.out.println(Arrays.deepToString(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5}, 3)));
+        System.out.println(Arrays.deepToString(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5}, 2)));
+        System.out.println(Arrays.deepToString(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5}, 4)));
+        System.out.println(Arrays.deepToString(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6}, 3)));
+        System.out.println(Arrays.deepToString(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 4)));
+        System.out.println(Arrays.deepToString(basic.chunkArrayInGroups(new Object[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 2)));
         System.out.println("----------------------- Slasher Flick ------------------------");
-        System.out.println(basic.slasher(new Object[]{1, 2, 3}, 2));
-        System.out.println(basic.slasher(new Object[]{1, 2, 3}, 0));
-        System.out.println(basic.slasher(new Object[]{1, 2, 3}, 9));
-        System.out.println(basic.slasher(new Object[]{1, 2, 3}, 4));
-        System.out.println(basic.slasher(new Object[]{"burgers", "fries", "shake"}, 1));
-        System.out.println(basic.slasher(new Object[]{1, 2, "chicken", 3, "potatoes", "cheese", 4}, 5));
+        System.out.println(Arrays.toString(basic.slasher(new Object[]{1, 2, 3}, 2)));
+        System.out.println(Arrays.toString(basic.slasher(new Object[]{1, 2, 3}, 0)));
+        System.out.println(Arrays.toString(basic.slasher(new Object[]{1, 2, 3}, 9)));
+        System.out.println(Arrays.toString(basic.slasher(new Object[]{1, 2, 3}, 4)));
+        System.out.println(Arrays.toString(basic.slasher(new Object[]{"burgers", "fries", "shake"}, 1)));
+        System.out.println(Arrays.toString(basic.slasher(new Object[]{1, 2, "chicken", 3, "potatoes", "cheese", 4}, 5)));
         System.out.println("----------------------- Falsy Bouncer ------------------------");
-        System.out.println(basic.bouncer(new Object[]{7, "ate", "", false, 9}));
-        System.out.println(basic.bouncer(new Object[]{"a", "b", "c"}));
-        System.out.println(basic.bouncer(new Object[]{false, null, 0, "NaN", "undefined", ""}));
-        System.out.println(basic.bouncer(new Object[]{1, null, "NaN", 2, "undefined"}));
+        System.out.println(Arrays.toString(basic.bouncer(new Object[]{7, "ate", "", false, 9})));
+        System.out.println(Arrays.toString(basic.bouncer(new Object[]{"a", "b", "c"})));
+        System.out.println(Arrays.toString(basic.bouncer(new Object[]{false, null, 0, "NaN", "undefined", ""})));
+        System.out.println(Arrays.toString(basic.bouncer(new Object[]{1, null, "NaN", 2, "undefined"})));
         System.out.println("---------------------- Seek and Destroy -----------------------");
-        System.out.println(basic.destroyer(new Object[]{1, 2, 3, 1, 2, 3}, 2, 3));
-        System.out.println(basic.destroyer(new Object[]{1, 2, 3, 5, 1, 2, 3}, 2, 3));
-        System.out.println(basic.destroyer(new Object[]{3, 5, 1, 2, 2}, 2, 3, 5));
-        System.out.println(basic.destroyer(new Object[]{2, 3, 2, 3}, 2, 3));
-        System.out.println(basic.destroyer(new Object[]{"tree", "hamburger", 53}, "tree", 53));
+        System.out.println(Arrays.toString(basic.destroyer(new Object[]{1, 2, 3, 1, 2, 3}, 2, 3)));
+        System.out.println(Arrays.toString(basic.destroyer(new Object[]{1, 2, 3, 5, 1, 2, 3}, 2, 3)));
+        System.out.println(Arrays.toString(basic.destroyer(new Object[]{3, 5, 1, 2, 2}, 2, 3, 5)));
+        System.out.println(Arrays.toString(basic.destroyer(new Object[]{2, 3, 2, 3}, 2, 3)));
+        System.out.println(Arrays.toString(basic.destroyer(new Object[]{"tree", "hamburger", 53}, "tree", 53)));
         System.out.println("--------------------- Where do I belong ----------------------");
         System.out.println(basic.getIndexToIns(new int[]{10, 20, 30, 40, 50}, 35));
         System.out.println(basic.getIndexToIns(new int[]{10, 20, 30, 40, 50}, 30));
