@@ -48,7 +48,7 @@ public class Basic {
         for (String word : words) {
             result += word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase() + " ";
         }
-        return result;
+        return result.substring(0, result.length() - 1);
     }
 
     public long[] largestOfFour(int[][] array) {
@@ -120,7 +120,7 @@ public class Basic {
         for (int i = n; i < array.length; i++) {
             result += array[i] + ",";
         }
-        return result.split(",");
+        return splitString(result);
     }
 
     public Object[] bouncer(Object[] array) {
@@ -131,7 +131,7 @@ public class Basic {
                 result += array[i] + ",";
             }
         }
-        return result.split(",");
+        return splitString(result);
     }
 
     public Object[] destroyer(Object[] array, Object... destroy) {
@@ -141,7 +141,7 @@ public class Basic {
                 result += array[i] + ",";
             }
         }
-        return result.split(",");
+        return splitString(result);
     }
 
     public int getIndexToIns(int[] numbers, int insert) {
@@ -174,6 +174,23 @@ public class Basic {
                 } else if (i == alphabets.length - 1) {
                     result += character;
                 }
+            }
+        }
+        return result;
+    }
+
+    private Object[] splitString(String str) {
+        if(str.length() == 0) {
+            return new Object[0];
+        }
+        String[] temp = str.split(",");
+        Object[] result = new Object[temp.length];
+        for(int i = 0; i< result.length; i++) {
+            try {
+                result[i] = Integer.valueOf(temp[i]);
+            } catch (Exception e) {
+                result[i] = temp[i];
+                continue;
             }
         }
         return result;
