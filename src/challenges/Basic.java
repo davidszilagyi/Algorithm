@@ -1,8 +1,6 @@
 package challenges;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by David Szilagyi on 2017. 08. 16..
